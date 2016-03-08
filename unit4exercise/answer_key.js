@@ -38,7 +38,7 @@ function getParam(flagName){
 function cleanUpPath(pathName){
     pathName = path.normalize(pathName);
     
-    if(path.isAbsolute(pathName)){
+    if(!path.isAbsolute(pathName)){
         pathName = path.resolve(pathName);
     }
     
