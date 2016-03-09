@@ -154,3 +154,50 @@ function doWorkAsync(callback){
     });
     
 }
+
+// other "wrapper" functions
+function readdirPromise(dir){
+    var promise = new Promise(function(resolve, reject){
+        
+        // call our original async function
+        // but then make sure to either call
+        // our resolve or reject callbacks
+        fs.readdir(dir, function(err, files){
+            if(err)
+                reject(err);
+            else 
+                resolve(files);
+        });
+        
+    });
+    
+    return promise;    
+}
+
+// example
+readdirPromise("C:/temp/").then(function(arrayOfFiles){
+   console.log(arrayOfFiles); 
+});
+
+function renamePromise(oldPath, newPath){
+    var promise = new Promise(function(resolve, reject){
+        
+        // call our original async function
+        // but then make sure to either call
+        // our resolve or reject callbacks
+        fs.rename(oldPath, newPath, function(err){
+            if(err)
+                reject(err);
+            else 
+                resolve();
+        });
+        
+    });
+    
+    return promise;    
+}
+
+renamePromise("C:/temp/some_file.txt", "C:/temp/some_file2.txt")
+.then(function(){
+    console.log("done");
+})
