@@ -7,7 +7,7 @@
 			"request": "launch",
 			"program": "index.js",
 			"stopOnEntry": false,
-			"args": ["-input", "C:\\temp\\some_folder"],
+			"args": [],
 			"cwd": ".",
 			"runtimeExecutable": "C:\\Program Files (x86)\\nodejs\\node.exe",
 			"runtimeArgs": [
