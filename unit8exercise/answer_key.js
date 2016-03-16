@@ -53,7 +53,7 @@ function processListOfFiles(files){
 function readFilePromise(filePath, encoding){
     var prom = new Promise(function(resolve, reject){
        
-       fs.readFile(folderPath, encoding, function(err, contents){
+       fs.readFile(filePath, encoding, function(err, contents){
           if(err){
               reject(err);
               return;
@@ -62,6 +62,8 @@ function readFilePromise(filePath, encoding){
           resolve(contents);
        });        
     });
+    
+    return prom;
 }
 
 function readdirPromise(folderPath){
@@ -76,6 +78,8 @@ function readdirPromise(folderPath){
           resolve(files);
        });        
     });
+    
+    return prom;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
