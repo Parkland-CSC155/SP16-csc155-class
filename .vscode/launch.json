@@ -14,7 +14,8 @@
 				"--nolazy"
 			],
 			"env": {
-				"NODE_ENV": "development"
+				"NODE_ENV": "development",
+                "MS_TableConnectionString": "some-connection-string"
 			},
 			"externalConsole": false,
 			"sourceMaps": false,

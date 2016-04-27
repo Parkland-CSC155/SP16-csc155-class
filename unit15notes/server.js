@@ -1,6 +1,9 @@
 var express = require('express');
 var passport = require('passport');
 var Strategy = require('passport-local').Strategy;
+
+var connectionString = process.env.MS_TableConnectionString; // my db credentials
+
 var db = require('./db');
 
 
