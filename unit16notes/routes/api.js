@@ -14,7 +14,9 @@ router.get("/search/:searchText", function (req, res, next) {
 SELECT  *
 FROM    NutritionData
 WHERE   Shrt_Desc LIKE '${searchText}'
-LIMIT   25 OFFSET ${skip}    
+ORDER BY Shrt_Desc
+OFFSET  ${skip} ROWS
+FETCH NEXT 25 ROWS ONLY    
     `;
     
     // do the query 
