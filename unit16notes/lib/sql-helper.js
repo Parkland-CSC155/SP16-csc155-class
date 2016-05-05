@@ -5,7 +5,7 @@
 
 var sql = require("mssql");
 
-var connectionString = process.env.MS_TableConnectionString;
+var connectionString = process.env.SQLCONNSTR_MS_TableConnectionString;
 
 exports.query = function(sqlString){
   

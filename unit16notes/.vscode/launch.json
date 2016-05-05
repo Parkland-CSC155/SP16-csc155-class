@@ -10,13 +10,13 @@
 			"args": [],
 			"cwd": "${workspaceRoot}",
 			"preLaunchTask": null,
-			"runtimeExecutable": "C:\\Program Files (x86)\\nodejs\\node.exe",
+			"runtimeExecutable": null,
 			"runtimeArgs": [
 				"--nolazy"
 			],
 			"env": {
 				"NODE_ENV": "development",
-                "MS_TableConnectionString": "Server=tcp:nutrition-server.database.windows.net,1433;Database=nutrition-db;Uid=ebarnard@nutrition-server;Pwd={your-pwd};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=3000;"
+                "SQLCONNSTR_MS_TableConnectionString": "Server=tcp:nutrition-server.database.windows.net,1433;Database=nutrition-db;Uid=ebarnard@nutrition-server;Pwd={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=3000;"
 			},
 			"externalConsole": false,
 			"sourceMaps": false,

@@ -30,6 +30,7 @@ FETCH NEXT 25 ROWS ONLY
             res.json(records);
         })
         .catch(function (err) {
+            console.error(err);
             next(err);
         });
 });
@@ -38,7 +39,7 @@ router.get("/:id", function (req, res, next) {
 
     var id = req.params.id || "0";
 
-    var connectionString = process.env.MS_TableConnectionString;
+    var connectionString = process.env.SQLCONNSTR_MS_TableConnectionString;
     sql.connect(connectionString).then(function () {
 
         var qry = `
@@ -57,7 +58,7 @@ WHERE   NDB_No = '${id}'
 
     })
     .catch(function(err){
-      console.log(err);
+      console.error(err);
       next(err);  
     });
 
